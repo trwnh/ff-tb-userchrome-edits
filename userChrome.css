@@ -1,0 +1,83 @@
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+/*********************************************************
+folders / sidepane theming
+*/
+#folderTree {
+    background-color: #111 !important;
+}
+#folderTree > treechildren::-moz-tree-cell-text {
+    color: #ddd !important;
+    font-size: 14px;
+    font-family: SF UI Display;
+    font-weight: 300;
+}
+#folderTree treechildren::-moz-tree-row {
+    height: 32px !important;
+}
+#folderTree treechildren::-moz-tree-row(selected) {
+    -moz-appearance: none !important;
+    background-image: none !important;
+    background-color: Highlight !important;
+    border: none !important;
+}
+#folderTree treechildren::-moz-tree-row(hover) {
+    -moz-appearance: none !important;
+    background-image: none !important;
+    background-color: #17627f !important;
+    border: none !important;
+}
+
+/*********************************************************
+threads theming
+*/
+#threadTree {
+    background-color: #333 !important;
+}
+#threadTree >treechildren::-moz-tree-cell-text {
+    color: #ddd !important;
+    font-size: 14px;
+    font-family: SF UI Display;
+    font-weight: 300;
+}
+#threadTree treechildren::-moz-tree-row    {
+    height: 32px !important;
+}
+#threadTree treechildren::-moz-tree-row(odd) {
+    -moz-appearance: none !important;
+    background-image: none !important;
+    background-color:#333 !important;
+}
+#threadTree treechildren::-moz-tree-row(selected) {
+    -moz-appearance: none !important;
+    background-image: none !important;
+    background-color: Highlight !important;
+    border: none !important;
+}
+#threadTree treechildren::-moz-tree-row(hover) {
+    -moz-appearance: none !important;
+    background-image: none !important;
+    background-color: #17627f !important;
+    border: none !important;
+}
+
+/*********************************************************
+other stuff?
+*/
+
+#quick-filter-bar,
+#singlemessage>:not(#messagepanewrapper),
+#threadTree treecol {
+    filter: invert(100%) hue-rotate(180deg) contrast(90%) saturate(200%) brightness(125%);
+    background-color: #fff !important;
+}
+
+xul:slider {background-color: #111 !important;}
+:root:-moz-lwtheme {--toolbar-bgcolor: rgba(0,0,0) !important;}
+
+#quick-filter-bar, #folderPaneBox {
+    margin-top: -1px !important;
+}
+
+scrollbar {
+filter: invert(100%) contrast(90%) saturate(200%) brightness(50%);
+}
