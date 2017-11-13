@@ -74,36 +74,79 @@ Lightning sidebar
     color: #ddd
 }
 #todaypane-new-event-button {
-background: Highlight !important;    
+    background: Highlight !important;    
 }
 #agenda-listbox {
     background: #333 !important;
     color: #ddd !important;
 }
 /*********************************************************
-other stuff?
+other inbox stuff?
 */
 
 #quick-filter-bar,
 #singlemessage>:not(#messagepanewrapper),
-#threadTree treecol {
+#threadTree treecol
+{
     filter: invert(100%) hue-rotate(180deg) contrast(90%) saturate(200%) brightness(125%);
     background-color: #fff !important;
 }
 
-xul:slider {background-color: #111 !important;}
-:root:-moz-lwtheme {--toolbar-bgcolor: rgba(0,0,0) !important;}
+xul:slider
+{background-color: #111 !important;}
+:root:-moz-lwtheme
+{--toolbar-bgcolor: rgba(0,0,0) !important;}
 
-scrollbar {
-filter: invert(100%) contrast(90%) saturate(200%) brightness(50%);
-}
+scrollbar
+{filter: invert(100%) contrast(90%) brightness(50%);}
 
 /*cleaning up gaps*/
-#folderpane_splitter {
-    border-inline-start: 1px solid black !important;
+#folderpane_splitter
+{border-inline-start: 1px solid black !important;}
+#today-splitter
+{border-inline-end: 1px solid black !important;}
+#quick-filter-bar,
+#folderPaneBox
+{margin-top: -1px !important;}
+#threadCols
+{margin-top: -1px !important;}
+
+/*********************************************************
+Calendar
+*/
+/*left sidebar*/
+#calendar-panel,
+#calendar-listtree-pane,
+#calendar-listtree-pane tree
+{background: #111 !important;}
+#calendar-list-header
+{color: white !important;
+font-family: SF Display;
+font-size: 16px;}
+#calendar-listtree-pane > tree,
+#calendar-list-tree-widget > tree,
+.task-tree-subpane > tree,
+.minimonth-row-head
+{color: #ddd !important;
+font-family: SF Display;
+font-size: 14px;}
+#minimonth-pane,
+#minimonth-splitter,
+#calMinimonth
+{background: #333 !important;}
+.minimonth-month-box
+{filter: invert(100%) !important;}
+
+/*week view*/
+/*not complete, needs more thought abt selectors
+//TODO
+.calendar-event-column-linebox
+{}
+*/
+.calendar-time-bar-box-odd,
+.calendar-time-bar-box-even
+{
+    background: #333 !important;
+    color: white !important;
+    font-family: SF Display;
 }
-#today-splitter {
-    border-inline-end: 1px solid black !important;
-}
-#quick-filter-bar, #folderPaneBox {margin-top: -1px !important;}
-#threadCols {margin-top: -1px !important;}
