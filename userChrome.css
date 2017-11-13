@@ -26,7 +26,6 @@ folders / sidepane theming
     background-color: #17627f !important;
     border: none !important;
 }
-
 /*********************************************************
 threads theming
 */
@@ -62,7 +61,25 @@ threads theming
     background-color: #17627f !important;
     border: none !important;
 }
-
+/*********************************************************
+Lightning sidebar
+*/
+#mini-day-box.today-subpane,
+#todaypane-new-event-button > .toolbarbutton-icon {
+    filter: invert(100%) !important;
+    color: #111 !important;
+}
+#agenda-panel, #agenda-panel > vbox, #agenda-toolbar {
+    background: #111 !important;
+    color: #ddd
+}
+#todaypane-new-event-button {
+background: Highlight !important;    
+}
+#agenda-listbox {
+    background: #333 !important;
+    color: #ddd !important;
+}
 /*********************************************************
 other stuff?
 */
@@ -77,10 +94,16 @@ other stuff?
 xul:slider {background-color: #111 !important;}
 :root:-moz-lwtheme {--toolbar-bgcolor: rgba(0,0,0) !important;}
 
-#quick-filter-bar, #folderPaneBox {
-    margin-top: -1px !important;
-}
-
 scrollbar {
 filter: invert(100%) contrast(90%) saturate(200%) brightness(50%);
 }
+
+/*cleaning up gaps*/
+#folderpane_splitter {
+    border-inline-start: 1px solid black !important;
+}
+#today-splitter {
+    border-inline-end: 1px solid black !important;
+}
+#quick-filter-bar, #folderPaneBox {margin-top: -1px !important;}
+#threadCols {margin-top: -1px !important;}
