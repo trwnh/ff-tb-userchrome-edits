@@ -39,6 +39,9 @@ threads theming
     font-family: SF UI Display;
     font-weight: 300;
 }
+#threadTree > treechildren::-moz-tree-cell-text(unread) {
+    color: Highlight !important;
+}
 #threadTree treechildren::-moz-tree-row    {
     height: 32px !important;
 }
