@@ -1,0 +1,140 @@
+/* hide tabs toolbar */
+#TabsToolbar {visibility: collapse !important;}
+#titlebar-buttonbox {height: 32px !important;}
+#nav-bar {margin-top: 0px; margin-right: 0px; box-shadow: none !important;}
+[uidensity="compact"]:root #titlebar-buttonbox {height: 32px !important;}
+[uidensity="compact"]:root #nav-bar {margin-top: -32px;}
+#titlebar-spacer {background-color: var(--chrome-secondary-background-color);}
+#titlebar-buttonbox-container {background-color: var(--chrome-secondary-background-color);}
+/* fix menu bar position in titlebar */
+#menubar-items {height: 32px}
+#toolbar-menubar {padding-bottom: 0}
+/* no more white borders around window */
+:root[sizemode="normal"][tabsintitlebar] {border-top: 0}
+/* hide sidebar header */
+#sidebar-header {display: none;}
+/* remove circle background and padding from back button */
+:root:not([uidensity="compact"]) #back-button > .toolbarbutton-icon {background-color: unset !important;border: unset !important;padding: var(--toolbarbutton-inner-padding) !important;border-radius: var(--toolbarbutton-border-radius) !important;width: calc(2 * var(--toolbarbutton-inner-padding) + 16px) !important;}
+:root:not([uidensity="compact"]) #back-button:hover:not([disabled]) > .toolbarbutton-icon {background-color: var(--toolbarbutton-hover-background) !important;}
+:root:not([uidensity="compact"]) #back-button:active:not([disabled]) > .toolbarbutton-icon {background-color: var(--toolbarbutton-active-background) !important;}
+:root:not([uidensity="compact"]) #back-button {padding-inline-start: 3px !important;}
+/*black navbar*/
+#nav-bar {background: black !important;}
+/*----------------------------------------------------------------------------- 
+https://www.jeffersonscher.com/gm/url-bar-tweaks.html 
+-----------------------------------------------------------------------------*/
+@-moz-document url(chrome://browser/content/browser.xul) {
+/* Remove " - Visit" or " - Search with" bar in the drop-down */
+#PopupAutoCompleteRichResult richlistitem:first-of-type[type*="heuristic"],
+#PopupAutoCompleteRichResult richlistitem:first-of-type[actiontype="searchengine"],
+#PopupAutoCompleteRichResult richlistitem:first-of-type[actiontype="visiturl"],
+#PopupAutoCompleteRichResult richlistitem:first-of-type[actiontype="keyword"] {
+display:none !important;
+}
+/* Hide line for searching sld.tld below "Visit" Line */
+#PopupAutoCompleteRichResult richlistitem:first-of-type[actiontype="visiturl"] +
+richlistitem[actiontype="searchengine"] {
+display:none !important;
+}
+#PopupAutoCompleteRichResult .autocomplete-richlistbox {
+padding-top: 0 !important;
+padding-bottom: 0 !important;
+}
+
+/* Restore persistent display of drop-marker */
+#urlbar:not(:hover) > .urlbar-textbox-container > .urlbar-history-dropmarker {
+opacity: 1 !important;
+}
+/* Set max-height for items visible without scrolling */
+#PopupAutoCompleteRichResult .autocomplete-richlistbox {
+/* height:auto doesn't work in photon */
+max-height: calc(45.5px * 10) !important;
+}
+/* Set drop-down width */
+#PopupAutoCompleteRichResult, #urlbar {
+width: 700px !important;
+max-width: 700px !important;
+margin-left: 0 !important;
+}
+#PopupAutoCompleteRichResult .autocomplete-richlistitem:not([actiontype="searchengine"]) .ac-title-text,
+#PopupAutoCompleteRichResult .autocomplete-richlistitem .ac-url-text {
+min-width: 610px !important;
+}
+/* Create sufficient height for two lines */
+#PopupAutoCompleteRichResult .autocomplete-richlistitem:not([actiontype="searchengine"]) {
+position: relative !important;
+height: 45.5px !important;
+}
+/* Subtle border between results */
+#PopupAutoCompleteRichResult .autocomplete-richlistitem {
+border-bottom-color: #eee !important;
+}
+/* Position page title, set font-size */
+#PopupAutoCompleteRichResult .autocomplete-richlistitem:not([actiontype="searchengine"]) .ac-title {
+position: absolute !important;
+left: 54px;
+top: 0px;
+font-size: 16px !important;
+}
+/* Position page url / action, set font-size */
+#PopupAutoCompleteRichResult .autocomplete-richlistitem:not([actiontype="searchengine"]) .ac-url,
+#PopupAutoCompleteRichResult .autocomplete-richlistitem:not([actiontype="searchengine"]) .ac-action {
+position: absolute !important;
+left: 54px;
+top: 22px;
+font-size: 14px !important;
+}
+
+/* Position bookmark tags */
+#PopupAutoCompleteRichResult .autocomplete-richlistitem .ac-tags {
+position: absolute !important;
+right: 0px;
+top: 3px;
+}
+/* Hide separator between title and URL */
+#PopupAutoCompleteRichResult .autocomplete-richlistitem:not([actiontype="searchengine"]) .ac-separator {
+display: none !important;
+}
+/* Position special icon (bookmark, switch-to-tab) */
+#PopupAutoCompleteRichResult .autocomplete-richlistitem .ac-type-icon {
+margin-left: 4px !important;
+}
+/* Prevent excess indenting of icons in Photon */
+#PopupAutoCompleteRichResult .autocomplete-richlistitem [anonid="type-icon-spacer"] {
+display: none !important;
+}
+#PopupAutoCompleteRichResult {
+--item-padding-start: 0 !important;
+}
+
+
+#PopupAutoCompleteRichResult .ac-emphasize-text {
+font-weight: 400 !important;
+box-shadow: inset 0 0 1px 1px rgba(208,208,208,0.5);
+background-color: rgba(208,208,208,0.3);
+border-radius: 2px;
+text-shadow: 0 0 currentColor;
+}
+@media (-moz-windows-default-theme) {
+@media not all and (-moz-os-version: windows-xp) {
+#PopupAutoCompleteRichResult .ac-emphasize-text {
+box-shadow: inset 0 0 1px 1px rgba(0,0,0,0.1);
+background-color: rgba(0,0,0,0.05);
+}
+}
+@media (-moz-os-version: windows-xp) {
+#PopupAutoCompleteRichResult .ac-url-text .ac-emphasize-text {
+box-shadow: inset 0 0 1px 1px rgba(202,214,201,0.3);
+background-color: rgba(202,214,201,0.2);
+}
+}
+}
+/* Ability to scroll in Fx57 */
+#PopupAutoCompleteRichResult .autocomplete-richlistbox > scrollbox {
+overflow-y: auto !important;
+padding-right: 3px !important;
+}
+#PopupAutoCompleteRichResult .autocomplete-richlistbox {
+padding-right: 0 !important;
+}
+}
