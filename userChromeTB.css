@@ -74,8 +74,18 @@ threads theming
     background-color: #17627f !important;
     border: none !important;
 }
+
 /***********************************************************
-Lightning sidebar
+message
+//TODO: debug this
+*/
+browser#messagepane html, browser#messagepane html body {
+	background: #333 !important;
+	color: white !important;	
+}
+
+/***********************************************************
+lightning sidebar
 */
 #mini-day-box.today-subpane,
 #todaypane-new-event-button > .toolbarbutton-icon {
@@ -137,7 +147,6 @@ scrollbar {
 #threadCols {
     margin-top: -1px !important;
 }
-
 /*******************************************************************************
 Calendar
 */
