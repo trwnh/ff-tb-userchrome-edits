@@ -3,9 +3,9 @@ custom edits to firefox dev and thunderbird userchrome css
 
 # extra instructions
 * for firefox, install tree style tab and use the default dark theme
- * appdata/roaming/mozilla/firefox/profiles/$.default/chrome/userChrome.css
+  * appdata/roaming/mozilla/firefox/profiles/$.default/chrome/userChrome.css
 * for thunderbird, install a dark theme/persona to theme the titlebar and tabs.
- * appdata/roaming/thunderbird/profiles/$.dev-edition-default/chrome/userChrome.css
+  * appdata/roaming/thunderbird/profiles/$.dev-edition-default/chrome/userChrome.css
 
 # firefox mods
 * blackout navbar and titlebar
