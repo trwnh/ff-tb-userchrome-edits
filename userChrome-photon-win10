@@ -1,0 +1,12 @@
+/* Hide horizontal tabs at the top of the window */
+#tabbrowser-tabs {
+  visibility: collapse !important;
+}
+
+/* resize menu bar*/
+#main-menubar .menubar-text {
+  font-size: 14px !important;
+  margin: 10px 6px 2px !important;
+  height: 28px !important;
+  padding: 0 4px !important;
+}
